@@ -1,3 +1,9 @@
+# InternsPortal
+As of today’s generation it would be very weird for an intern to just come and submit their resume and to get different date for an interview. So for this problem we have made an online portal to submit their resume. The interns who are interested must submit his/her resume on portal and futher the interviewer will be getting an email regarding it. Now the interviewer will look over the intern’s resume and will simply accept or reject so accordingly intern will be get notified through an email. If the interviewer accepts the resume of any intern, the Intern will be notified for the interview with the respective date and time
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
