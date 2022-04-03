@@ -1,21 +1,44 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\intern;
+use DB;
 use Illuminate\Http\Request;
 
 class InternController extends Controller
 {
+
+    //displayform
+    public function displayform()
+        {
+            return view('internmodel');
+        }
+
+    //save data in database
+    public function save(Request $request)
+    {
+        $Fullname = $request->input('fullname');
+        $Gender = $request->input('gender');
+        $Age = $request->input('age');
+        $DOB = $request->input('dob');
+        $Contactno = $request->input('contactno');
+        $Email_id = $request->input('email');
+        $College_name = $request->input('collegename');
+
+        DB::insert('insert into interns (fullname,gender,age,dob,contactno,email,collegename) values(?,?,?,?,?,?,?)'
+        ,[$Fullname,$Gender,$Age,$DOB,$Contactno,$Email_id,$College_name]);
+
+        return redirect('intern')->with('success','data saved');
+
+    }
+
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-        return view('internmodel');
-    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -33,11 +56,7 @@ class InternController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
-
+    
     /**
      * Display the specified resource.
      *
@@ -82,4 +101,7 @@ class InternController extends Controller
     {
         //
     }
+
+    
+
 }

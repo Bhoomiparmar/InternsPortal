@@ -13,5 +13,10 @@ use App\Http\Controllers\InternController;
 |
 */
 
-Route::resource('/',InternController::class);
+Route::get('/intern','App\Http\Controllers\InternController@displayform');
+Route::post('/add_data','App\Http\Controllers\InternController@save'); 
 
+
+Route::get('/', function () {
+    return view('welcome');
+});
