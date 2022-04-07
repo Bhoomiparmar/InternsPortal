@@ -28,7 +28,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       
-      <form action="/add_data" method="POST">
+      <form action="/add_data" method="POST" enctype="multipart/form-data">
      
         {{ csrf_field() }}
 
@@ -85,9 +85,9 @@
                   
               <div class="form-group">
               <label for="formFile" class="form-label">Upload Resume(.pdf only)</label>
-              <input class="form-control" type="file" id="formFile">
+              <input class="form-control" type="file" name="file" id="formFile">
               </div>
-      </div>
+      
               <div class="modal-footer">
                 <button type="button" name="close" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <button type="submit" name="submit" class="btn btn-primary">Submit</button>

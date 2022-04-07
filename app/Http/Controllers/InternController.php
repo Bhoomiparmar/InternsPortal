@@ -24,10 +24,14 @@ class InternController extends Controller
         $Contactno = $request->input('contactno');
         $Email_id = $request->input('email');
         $College_name = $request->input('collegename');
+        
+        $ext = $request->file('file')->getClientOriginalExtension();
+        $File= $request->file('file')->storeAs('pdf','Resume.'.$ext);
 
-        DB::insert('insert into interns (fullname,gender,age,dob,contactno,email,collegename) values(?,?,?,?,?,?,?)'
-        ,[$Fullname,$Gender,$Age,$DOB,$Contactno,$Email_id,$College_name]);
+        DB::insert('insert into interns (fullname,gender,age,dob,contactno,email,collegename,file) values(?,?,?,?,?,?,?,?)'
+        ,[$Fullname,$Gender,$Age,$DOB,$Contactno,$Email_id,$College_name,$File]);
 
+       
         return redirect('intern')->with('success','data saved');
 
     }
